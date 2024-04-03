@@ -77,7 +77,7 @@ top_pad = Box(level_indic_box, height=100, width="fill", align="top")
 
 text_box = Box(level_indic_box, align="top", width="fill")
 
-text = Text(text_box, text="0", color=color_active, align="top",width="fill", size=600)
+text = Text(text_box, text="0", color=color_active, align="top",width="fill", size=300)
 text.repeat(1000, lambda: get_data(spl_queue))  
 
 botom_pad = Box(level_indic_box, height=0, width="fill", align="bottom")
@@ -92,8 +92,10 @@ fifteen_button = PushButton(buttons_box, command=set_fifteen, text="15 minute av
 
 spacer_box = Box(buttons_box, width=50, height="fill", grid=[4,0])
 
-a_button = PushButton(buttons_box, command=set_a, text="A weighing", grid=[5,0], padx=30, pady=30)
-lin_button = PushButton(buttons_box, command=set_lin, text="Z weighing", grid=[6,0], padx=30, pady=30)
+buttons_filters_box = Box(whole_app_box, layout="grid")
+
+a_button = PushButton(buttons_filters_box, command=set_a, text="A weighing", grid=[0,0], padx=30, pady=30)
+lin_button = PushButton(buttons_filters_box, command=set_lin, text="Z weighing", grid=[1,0], padx=30, pady=30)
 
 instant_button.text_color=color_active
 instant_button.text_size=20

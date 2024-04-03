@@ -65,7 +65,7 @@ class SPL_Meter_Manager:
 
     def measure_SPL(self, spl_queue, do_reset_queue):
         CHANNEL = 1 #To NIE zmienia się w naszej konfiguracji. Jeśli zmienił się model mikrofonu i nie działa, to tutaj można szukać winnego
-        with sd.InputStream(device=4, channels=CHANNEL, callback=self.callback,
+        with sd.InputStream(device=0, channels=CHANNEL, callback=self.callback,
                         blocksize=int(self.sampling_rate * self.timeweighting),
                         samplerate=self.sampling_rate):
             while True:
